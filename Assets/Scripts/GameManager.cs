@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
     public int lives { get; private set; }
 
+    public int ghostMultiplayer { get; private set; }
+
     private void Start()
     {
         NewGame();
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
+        ResetGhostMultiplier();
         for (int i = 0; i < this.ghosts.Length; i++)
         {
             this.ghosts[i].gameObject.SetActive(true);
@@ -68,7 +71,9 @@ public class GameManager : MonoBehaviour
 
     public void GhostEaten(Ghost ghost)
     {
-        SetScore(this.score + ghost.points);
+        int points = ghost.points * ghostMultiplayer;
+        SetScore(score + ghost.points);
+        ghostMultiplayer++;
     }
 
     public void PacmanEaten()
@@ -94,5 +99,41 @@ public class GameManager : MonoBehaviour
         {
             NewGame();
         }
+    }
+
+    public void PelletEaten(Pellet pellet)
+    {
+        pellet.gameObject.SetActive(false);
+        SetScore(score + pellet.scorePoints);
+        if(!HasRemainingPellets())
+        {
+            pacman.gameObject.SetActive(false);
+            Invoke(nameof(NewRound), 3.0f);
+        }
+    }
+
+    public void PowerPelletEaten(PowerPellet pellet)
+    {
+        
+        PelletEaten(pellet);
+        CancelInvoke();
+        Invoke(nameof(ResetGhostMultiplier), pellet.duration);
+
+    }
+    private bool HasRemainingPellets()
+    {
+        foreach(Transform pellet in pellets)
+        {
+            if (pellet.gameObject.activeSelf)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void ResetGhostMultiplier()
+    {
+        ghostMultiplayer = 1;
     }
 }
