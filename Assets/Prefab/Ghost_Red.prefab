@@ -79,5 +79,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9025020372612879595, guid: a5b83d92bc8221041a62f8d1888d1036, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8879150081695608560, guid: 188d1a22a0f178e45acc95a67f93bf36, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b83d92bc8221041a62f8d1888d1036, type: 3}

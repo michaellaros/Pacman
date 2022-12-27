@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1615207537631703074, guid: a5b83d92bc8221041a62f8d1888d1036, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4447879686603742571, guid: a5b83d92bc8221041a62f8d1888d1036, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -71,5 +75,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Cyan
       objectReference: {fileID: 0}
+    - target: {fileID: 9025020372612879595, guid: a5b83d92bc8221041a62f8d1888d1036, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 8879150081695608560, guid: 188d1a22a0f178e45acc95a67f93bf36, type: 3}
+    - target: {fileID: 9025020372612879595, guid: a5b83d92bc8221041a62f8d1888d1036, type: 3}
+      propertyPath: initialBehaviour
+      value: 
+      objectReference: {fileID: 2098686874498663254}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b83d92bc8221041a62f8d1888d1036, type: 3}
+--- !u!114 &2098686874498663254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4808563175341770008, guid: a5b83d92bc8221041a62f8d1888d1036, type: 3}
+  m_PrefabInstance: {fileID: 2334137648253123006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46764cd58afd6284ea167ed8dd165f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
