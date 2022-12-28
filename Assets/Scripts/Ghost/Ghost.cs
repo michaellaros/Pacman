@@ -13,6 +13,7 @@ public class Ghost : MonoBehaviour
     public GhostEscape escape { get; private set; }
     public GhostBehaviour initialBehaviour;
     public Transform target;
+         
     private void Awake()
     {
         movement = GetComponent<Movement>();
