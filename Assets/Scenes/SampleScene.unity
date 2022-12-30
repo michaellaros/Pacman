@@ -2861,6 +2861,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1761189559}
     - target: {fileID: 2098686874498663254, guid: 4f2ece3e821fd1146a5c1f10260df6f0, type: 3}
+      propertyPath: outsideSpawn
+      value: 
+      objectReference: {fileID: 1081593947}
+    - target: {fileID: 2098686874498663254, guid: 4f2ece3e821fd1146a5c1f10260df6f0, type: 3}
       propertyPath: outsiteSpawn
       value: 
       objectReference: {fileID: 1081593947}
@@ -2965,6 +2969,10 @@ PrefabInstance:
       propertyPath: insideSpawn
       value: 
       objectReference: {fileID: 1761189559}
+    - target: {fileID: 6878080433229914501, guid: 7a21e97904f191a499a628b8a9e38f6b, type: 3}
+      propertyPath: outsideSpawn
+      value: 
+      objectReference: {fileID: 1081593947}
     - target: {fileID: 6878080433229914501, guid: 7a21e97904f191a499a628b8a9e38f6b, type: 3}
       propertyPath: outsiteSpawn
       value: 
@@ -3152,6 +3160,10 @@ PrefabInstance:
       propertyPath: insideSpawn
       value: 
       objectReference: {fileID: 1761189559}
+    - target: {fileID: 8894221353420037329, guid: 91f8ae08bf8392644b95e76ac710adf6, type: 3}
+      propertyPath: outsideSpawn
+      value: 
+      objectReference: {fileID: 1081593947}
     - target: {fileID: 8894221353420037329, guid: 91f8ae08bf8392644b95e76ac710adf6, type: 3}
       propertyPath: outsiteSpawn
       value: 
@@ -10505,6 +10517,10 @@ PrefabInstance:
       propertyPath: insideSpawn
       value: 
       objectReference: {fileID: 1761189559}
+    - target: {fileID: 3178242542986614282, guid: 1453da8065a8baa4c9312903b571118a, type: 3}
+      propertyPath: outsideSpawn
+      value: 
+      objectReference: {fileID: 1081593947}
     - target: {fileID: 3178242542986614282, guid: 1453da8065a8baa4c9312903b571118a, type: 3}
       propertyPath: outsiteSpawn
       value: 

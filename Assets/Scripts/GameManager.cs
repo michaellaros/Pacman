@@ -42,9 +42,9 @@ public class GameManager : MonoBehaviour
     private void ResetState()
     {
         ResetGhostMultiplier();
-        for (int i = 0; i < this.ghosts.Length; i++)
+        for (int i = 0; i < ghosts.Length; i++)
         {
-            this.ghosts[i].ResetState();
+            ghosts[i].ResetState();
         }
 
         pacman.ResetState();
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             this.ghosts[i].gameObject.SetActive(false);
         }
 
-        this.pacman.gameObject.SetActive(false);
+        pacman.gameObject.SetActive(false);
     }
     private void SetScore(int score)
     {
@@ -78,11 +78,11 @@ public class GameManager : MonoBehaviour
 
     public void PacmanEaten()
     {
-        this.pacman.gameObject.SetActive(false);
+        pacman.gameObject.SetActive(false);
 
-        SetLives(this.lives - 1);
+        SetLives(lives - 1);
 
-        if(this.lives > 0)
+        if(lives > 0)
         {
             Invoke(nameof(ResetState), 3.0f);
 
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (this.lives <= 0 && Input.anyKeyDown)
+        if (lives <= 0 && Input.anyKeyDown)
         {
             NewGame();
         }
@@ -108,13 +108,20 @@ public class GameManager : MonoBehaviour
         if(!HasRemainingPellets())
         {
             pacman.gameObject.SetActive(false);
+            foreach (Ghost item in ghosts)
+            {
+                item.gameObject.SetActive(false);
+            }
             Invoke(nameof(NewRound), 3.0f);
         }
     }
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
-        
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            ghosts[i].escape.Enable(pellet.duration);
+        }
         PelletEaten(pellet);
         CancelInvoke();
         Invoke(nameof(ResetGhostMultiplier), pellet.duration);
