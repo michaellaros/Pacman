@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 9140251902652345576}
   - component: {fileID: 18757784885341558}
   - component: {fileID: 1993896282396481707}
-  - component: {fileID: 7542750169846615507}
   - component: {fileID: 3055487419997023297}
+  - component: {fileID: 4331485322812820437}
   m_Layer: 6
   m_Name: Pacman
   m_TagString: Untagged
@@ -137,25 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3c6ca9546139e4bb81a1a05cc90112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7542750169846615507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6093010217331083918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb2a4fb89b9c5dc489d6b3e49fd9893a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 1f9604f5749fde646a59a72c9ee1cd3a, type: 3}
-  - {fileID: 21300000, guid: f8f2ab5881c3e9949bf4ffe9525a0fb7, type: 3}
-  - {fileID: 21300000, guid: 1f9604f5749fde646a59a72c9ee1cd3a, type: 3}
-  - {fileID: 21300000, guid: e3b83262a412c74408dba5cbe89f43f5, type: 3}
-  animTime: 0.125
-  loop: 1
+  deathSound: {fileID: 0}
 --- !u!114 &3055487419997023297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,9 +150,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce01f6999ee5e498e4e93775247651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 4
   speedMultiplier: 1
   initialDirection: {x: 1, y: 0}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!95 &4331485322812820437
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093010217331083918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e736902dc4cb2ab468d1db6bdf4c9505, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Pacman : MonoBehaviour
 {
+    [HideInInspector]
+    public GameObject deathSound;
     public Movement movement { get; private set; }
     private void Awake()
     {
@@ -35,5 +37,14 @@ public class Pacman : MonoBehaviour
         
         movement.ResetState();
         gameObject.SetActive(true);
+    }
+
+    public void PlayDeath()
+    {
+        Instantiate(deathSound);
+    }
+    public void DisablePacman()
+    {
+        gameObject.SetActive(false);
     }
 }
