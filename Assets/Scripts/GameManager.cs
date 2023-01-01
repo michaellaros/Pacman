@@ -38,7 +38,10 @@ public class GameManager : MonoBehaviour
         SetScore(0);
         SetLives(3);
         NewRound();
-
+        gameOver.gameObject.SetActive(false);
+        livesUI[0].gameObject.SetActive(true);
+        livesUI[1].gameObject.SetActive(true);
+        livesUI[2].gameObject.SetActive(true);
     }
 
     private void NewRound()
@@ -64,7 +67,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         for (int i = 0; i < ghosts.Length; i++)
         {
@@ -119,10 +122,7 @@ public class GameManager : MonoBehaviour
             Invoke(nameof(ResetState), 3.0f);
 
         }
-        else
-        {
-            GameOver();
-        }
+        
     }
 
     private void Update()
@@ -196,7 +196,6 @@ public class GameManager : MonoBehaviour
     {
         Pellet[] pelletsInScene = GameObject.FindObjectsOfType<Pellet>();
         int pelletIndex = Random.Range(0, pelletsInScene.Length);
-        Debug.Log(pelletsInScene.Length + " "+ pelletIndex);
         pelletsInScene[pelletIndex].gameObject.SetActive(false);
         Instantiate(fruits[0], pelletsInScene[pelletIndex].transform.position,Quaternion.identity);
     }
